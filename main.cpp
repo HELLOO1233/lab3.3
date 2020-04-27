@@ -2,7 +2,6 @@
 #include <vector>
 #include <conio.h>
 
-
 using namespace std;
 vector<double>
 input_numbers (size_t count)
@@ -13,6 +12,18 @@ input_numbers (size_t count)
         cin>>result[i];
     }
 return result;
+}
+void find_minmax(const vector <double> &numbers, double &max, double &min)
+{
+    max=numbers[0];
+    min=numbers[0];
+    for(size_t a:numbers)
+    {
+        if(a<min)
+            min=a;
+        if(a>max)
+            max=a;
+    }
 }
 vector<size_t>
 make_histogram(const vector <double> &numbers,double &max, double &min, size_t &bin_count)
@@ -63,16 +74,16 @@ void show_histogram_svg(const vector<size_t>& bins)
     const auto BIN_HEIGHT = 30;
     const auto BLOCK_WIDTH = 10;
     svg_begin(IMAGE_WIDTH, IMAGE_HEIGHT);
-    double top = 0;
     unsigned max_count=0;
     for (size_t b : bins) /* мы присваиваем значение количества элементов */
     {
         if(max_count<b)
             max_count=b; /* здесь мы ищем максимальное количество элементов в массиве*/
     }
+    double top = 0;
     for (size_t bin : bins)
     {
-        size_t height=35;
+        size_t height=MAX_ASTERISK;
             if(max_count>MAX_ASTERISK) /* Если количество будет больше 35, то уменьшаем масштаб*/
                 height=MAX_ASTERISK*((static_cast<double>(bin))/max_count); /* это для того,чтобы было дробное число , получаем, используя "static_cast<double>"*/
         else
@@ -86,11 +97,10 @@ void show_histogram_svg(const vector<size_t>& bins)
     }
     svg_end();
 }
+
 int main()
 {
-    double left;
-    double baseline;
-    string text;
+
     size_t number_count, bin_count;
     double max=0, min=0;
     cerr<<"number_count=";
