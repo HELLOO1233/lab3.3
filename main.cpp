@@ -28,7 +28,6 @@ make_histogram(const vector <double> &numbers,double &max, double &min, size_t &
     }
     return bins;
 }
-
 void svg_text(double left, double baseline, string text)
 {
      cout << "<text x='"<<left<<"' y='"<<baseline<<"'>"<<text<<"</text>";
@@ -71,7 +70,7 @@ void show_histogram_svg(const vector<size_t>& bins)
     double top = 0;
     for (size_t bin : bins)
     {
-        size_t height=MAX_ASTERISK;
+        size_t height=35;
             if(max_count>MAX_ASTERISK) /* Если количество будет больше 35, то уменьшаем масштаб*/
                 height=MAX_ASTERISK*((static_cast<double>(bin))/max_count); /* это для того,чтобы было дробное число , получаем, используя "static_cast<double>"*/
         else
@@ -82,6 +81,8 @@ void show_histogram_svg(const vector<size_t>& bins)
         svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(bin));
         svg_rect(TEXT_WIDTH, top, height, BIN_HEIGHT, "red", "#aaffaa");
         top += BIN_HEIGHT;
+
+
     }
     svg_end();
 }
