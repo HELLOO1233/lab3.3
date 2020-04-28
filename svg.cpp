@@ -23,16 +23,31 @@ void svg_end()
 {
     cout << "</svg>\n";
 }
+ size_t input_BLOCK_WIDTH()
+{
+    size_t BLOCK_WIDTH;
+    int flag=1;
+    while (flag==1)
+    {
+        cerr<<"Please enter the width of one block of the histogram\n";
+        cin>>BLOCK_WIDTH;
+        if (BLOCK_WIDTH<3 || BLOCK_WIDTH>30)
+            cerr << "The width of one block of the histogram cannot be more then 30 px or less then 3 px\n";
+        if (BLOCK_WIDTH>=3 && BLOCK_WIDTH<=30)
+            flag=0;
+    }
+    return BLOCK_WIDTH;
+}
 void show_histogram_svg(const vector<size_t> bins)
 {
-    const size_t MAX_ASTERISK=35;
     const auto IMAGE_WIDTH = 400;
     const auto IMAGE_HEIGHT = 300;
     const auto TEXT_LEFT = 20;
     const auto TEXT_BASELINE = 20;
     const auto TEXT_WIDTH = 50;
     const auto BIN_HEIGHT = 30;
-    const auto BLOCK_WIDTH = 10;
+    const auto BLOCK_WIDTH=input_BLOCK_WIDTH();
+    size_t MAX_ASTERISK=(size_t)(350/BLOCK_WIDTH);
     svg_begin(IMAGE_WIDTH, IMAGE_HEIGHT);
     unsigned max_count=0;
     for (size_t b : bins) /* мы присваиваем значение количества элементов */
