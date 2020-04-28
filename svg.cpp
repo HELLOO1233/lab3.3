@@ -1,4 +1,5 @@
 #include "svg.h"
+#include "block_width.h"
 #include <iostream>
 using namespace std;
 void svg_text(double left, double baseline, string text)
@@ -22,21 +23,6 @@ void svg_begin(double width, double height)
 void svg_end()
 {
     cout << "</svg>\n";
-}
- size_t input_BLOCK_WIDTH()
-{
-    size_t BLOCK_WIDTH;
-    int flag=1;
-    while (flag==1)
-    {
-        cerr<<"Please enter the width of one block of the histogram\n";
-        cin>>BLOCK_WIDTH;
-        if (BLOCK_WIDTH<3 || BLOCK_WIDTH>30)
-            cerr << "The width of one block of the histogram cannot be more then 30 px or less then 3 px\n";
-        if (BLOCK_WIDTH>=3 && BLOCK_WIDTH<=30)
-            flag=0;
-    }
-    return BLOCK_WIDTH;
 }
 void show_histogram_svg(const vector<size_t> bins)
 {
