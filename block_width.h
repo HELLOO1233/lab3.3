@@ -3,7 +3,7 @@
 #include <vector>
 using namespace std;
 #include <iostream>
-size_t input_BLOCK_WIDTH();
+void input_BLOCK_WIDTH(double &BLOCK_WIDTH,int flag);
 
 
 #endif // BLOCK_WIDTH_H_INCLUDED

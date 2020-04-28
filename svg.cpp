@@ -26,13 +26,14 @@ void svg_end()
 }
 void show_histogram_svg(const vector<size_t> bins)
 {
+    double BLOCK_WIDTH;
     const auto IMAGE_WIDTH = 400;
     const auto IMAGE_HEIGHT = 300;
     const auto TEXT_LEFT = 20;
     const auto TEXT_BASELINE = 20;
     const auto TEXT_WIDTH = 50;
     const auto BIN_HEIGHT = 30;
-    const auto BLOCK_WIDTH=input_BLOCK_WIDTH();
+    input_BLOCK_WIDTH(BLOCK_WIDTH,1);
     size_t MAX_ASTERISK=(size_t)(350/BLOCK_WIDTH);
     svg_begin(IMAGE_WIDTH, IMAGE_HEIGHT);
     unsigned max_count=0;

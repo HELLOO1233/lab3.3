@@ -1,10 +1,8 @@
 #include "block_width.h"
 #include <iostream>
 using namespace std;
-size_t input_BLOCK_WIDTH()
+void input_BLOCK_WIDTH(double &BLOCK_WIDTH, int flag)
 {
-    size_t BLOCK_WIDTH;
-    int flag=1;
     while (flag==1)
     {
         cerr<<"Please enter the width of one block of the histogram\n";
@@ -14,5 +12,4 @@ size_t input_BLOCK_WIDTH()
         if (BLOCK_WIDTH>=3 && BLOCK_WIDTH<=30)
             flag=0;
     }
-    return BLOCK_WIDTH;
 }

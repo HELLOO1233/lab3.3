@@ -1,9 +1,23 @@
 #include "histogram.h"
-
+#include "block_width.h"
 #include <cassert>
 
-void
-test_positive() {
+void test_less3()
+{
+    double BLOCK_WIDTH=2;
+    int flag=1;
+    input_BLOCK_WIDTH(BLOCK_WIDTH, flag);
+    assert(flag == 1);
+}
+void test_more30()
+{
+    double BLOCK_WIDTH=40;
+    int flag=1;
+    input_BLOCK_WIDTH(BLOCK_WIDTH, flag);
+    assert(flag == 1);
+}
+void test_positive()
+{
     double min = 0;
     double max = 0;
     find_minmax({1, 2, 3}, max, min);
@@ -45,7 +59,6 @@ void test_4()
     assert(min == 0);
     assert(max == 0);
 }
-
 int main()
 {
     test_positive();
@@ -53,4 +66,6 @@ int main()
     test_2();
     test_3();
     test_4();
+    test_less3();
+    test_more30();
 }
