@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1588022896 source:c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\main.cpp
+	<iostream>
+	<vector>
+	<conio.h>
+	"histogram.h"
+	"svg.h"
+
+1588022320 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\histogram.h
+	<vector>
+
+1588022341 source:c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\histogram.cpp
+	"histogram.h"
+
+1588023166 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\svg.h
+	<vector>
+
+1588070954 source:c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\svg.cpp
+	"svg.h"
+	"block_width.h"
+	<iostream>
+
+1588071090 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\block_width.h
+	<vector>
+	<iostream>
+
+1588071090 source:c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\block_width.cpp
+	"block_width.h"
+	<iostream>
+
