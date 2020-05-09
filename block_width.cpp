@@ -1,6 +1,8 @@
 #include "block_width.h"
 #include <iostream>
 using namespace std;
+#include <vector>
+
 void input_BLOCK_WIDTH(double &BLOCK_WIDTH, int flag)
 {
     while (flag==1)
