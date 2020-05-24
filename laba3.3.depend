@@ -6,11 +6,13 @@
 	"histogram.h"
 	"svg.h"
 
-1588022320 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\histogram.h
+1589025429 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\histogram.h
 	<vector>
 
-1588022341 source:c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\histogram.cpp
+1589025709 source:c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\histogram.cpp
 	"histogram.h"
+	<iostream>
+	<vector>
 
 1588023166 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\svg.h
 	<vector>
@@ -24,7 +26,8 @@
 	<vector>
 	<iostream>
 
-1588071090 source:c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\block_width.cpp
+1589025208 source:c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\block_width.cpp
 	"block_width.h"
 	<iostream>
+	<vector>
 

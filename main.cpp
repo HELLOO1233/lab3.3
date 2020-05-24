@@ -5,12 +5,12 @@
 #include "svg.h"
 using namespace std;
 vector<double>
-input_numbers (size_t count)
+input_numbers (istream& in, size_t count)
 {
     vector <double> result(count);
     for (int i=0; i<count; i++)
     {
-        cin>>result[i];
+        in>>result[i];
     }
 return result;
 }
@@ -38,7 +38,7 @@ int main()
     cerr<<"number_count=";
     cin>>number_count;
     cerr<<"Enter number count: "<<"\n";
-    const auto numbers = input_numbers(number_count);/* массив из количества элементов "number_count"*/
+    const auto numbers = input_numbers(cin,number_count);/* массив из количества элементов "number_count"*/
     cerr<<"bin_count=";
     cin>> bin_count;
     find_minmax (numbers,max,min);
