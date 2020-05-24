@@ -1,4 +1,5 @@
 #include <iostream>
+#include <curl/curl.h>
 #include <vector>
 #include <conio.h>
 #include "histogram.h"
@@ -59,6 +60,7 @@ read_input(istream& in , bool promt)
 }
 int main()
 {
+    curl_global_init(CURL_GLOBAL_ALL);
     const auto input = read_input(cin, true);
     const auto bins = make_histogram(input);
     show_histogram_svg(bins);
