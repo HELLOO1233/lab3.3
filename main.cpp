@@ -4,6 +4,10 @@
 #include "histogram.h"
 #include "svg.h"
 using namespace std;
+struct Input {
+    vector<double> numbers;
+    size_t bin_count;
+};
 vector<double>
 input_numbers (istream& in, size_t count)
 {
@@ -15,13 +19,15 @@ input_numbers (istream& in, size_t count)
 return result;
 }
 vector<size_t>
-make_histogram(const vector <double> &numbers,double &max, double &min, size_t &bin_count)
+make_histogram(struct Input data)
 {
-    vector<size_t>bins(bin_count,0); /* массив из индексов корзин */
-    for(double x : numbers) /* мы каждому x присваиваем последовательно каждый элемент массива "numbers" */
+    double max=0, min=0;
+    find_minmax (data.numbers,max,min);
+    vector<size_t>bins(data.bin_count,0); /* массив из индексов корзин */
+    for(double x : data.numbers) /* мы каждому x присваиваем последовательно каждый элемент массива "numbers" */
     {
-        size_t bin_index=(size_t)((x-min)*bin_count/(max-min));
-        if (bin_index==bin_count) /* индекс корзины "bin_index"*/
+        size_t bin_index=(size_t)((x-min)*data.bin_count/(max-min));
+        if (bin_index==data.bin_count) /* индекс корзины "bin_index"*/
         {
             bin_index=bin_index-1; /* нумирация идет с 0*/
         }
@@ -29,20 +35,23 @@ make_histogram(const vector <double> &numbers,double &max, double &min, size_t &
     }
     return bins;
 }
+Input
+read_input(istream& in) {
+    Input data;
 
+    cerr << "Enter number count: ";
+    size_t number_count;
+    in >> number_count;
+    cerr << "Enter numbers: ";
+    data.numbers = input_numbers(in, number_count);
+    cerr <<" Enter bin_count: ";
+    in >>data.bin_count;
+    return data;
+}
 int main()
 {
-
-    size_t number_count, bin_count;
-    double max=0, min=0;
-    cerr<<"number_count=";
-    cin>>number_count;
-    cerr<<"Enter number count: "<<"\n";
-    const auto numbers = input_numbers(cin,number_count);/* массив из количества элементов "number_count"*/
-    cerr<<"bin_count=";
-    cin>> bin_count;
-    find_minmax (numbers,max,min);
-    const auto bins=make_histogram(numbers,max,min,bin_count);
+    const auto input = read_input(cin);
+    const auto bins = make_histogram(input);
     show_histogram_svg(bins);
     return 0;
 }
