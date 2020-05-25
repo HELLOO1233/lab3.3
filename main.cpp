@@ -84,6 +84,9 @@ download(const string& address) {
             if (res != CURLE_OK)
             {
                 cout << curl_easy_strerror(res) << endl;
+                cout <<curl_version_info(CURLVERSION_NOW)<<"\n";
+                curl_version_info_data asd;
+                cout <<asd.ssl_version_num<<"\n";
                 exit(1);
             }
             curl_easy_cleanup(curl);
@@ -94,7 +97,7 @@ int main(int argc, char* argv[]) {
     Input input;
     if (argc > 1)
     {
-        input = download(argv[1]);
+        input = download(argv[1]);;
     }
     else
     {

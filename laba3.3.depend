@@ -1,10 +1,13 @@
 # depslib dependency file v1.0
-1590323933 source:c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\main.cpp
+1590420742 source:c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\main.cpp
 	<iostream>
+	<curl/curl.h>
 	<vector>
 	<conio.h>
 	"histogram.h"
 	"svg.h"
+	<string>
+	<sstream>
 
 1589025429 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\histogram.h
 	<vector>
@@ -31,4 +34,43 @@
 	"block_width.h"
 	<iostream>
 	<vector>
+
+1587991348 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\curl\include\curl\curl.h
+	"curlver.h"
+	"system.h"
+	<stdio.h>
+	<limits.h>
+	<osreldate.h>
+	<sys/types.h>
+	<time.h>
+	<winsock2.h>
+	<ws2tcpip.h>
+	<sys/select.h>
+	<sys/socket.h>
+	<sys/time.h>
+	<support/SupportDefs.h>
+	"easy.h"
+	"multi.h"
+	"urlapi.h"
+	"typecheck-gcc.h"
+
+1588129392 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\curl\include\curl\curlver.h
+
+1587548874 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\curl\include\curl\system.h
+	<winsock2.h>
+	<windows.h>
+	<ws2tcpip.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<sys/poll.h>
+
+1587548874 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\curl\include\curl\easy.h
+
+1587548874 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\curl\include\curl\multi.h
+	"curl.h"
+
+1587548874 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\curl\include\curl\urlapi.h
+	"curl.h"
+
+1587548874 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\curl\include\curl\typecheck-gcc.h
 
