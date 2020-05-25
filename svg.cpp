@@ -6,7 +6,7 @@ void svg_text(double left, double baseline, string text)
 {
      cout << "<text x='"<<left<<"' y='"<<baseline<<"'>"<<text<<"</text>";
 }
-void svg_rect(double x, double y, double width, double height,string stroke= "black", string fill= "black")
+void svg_rect(double x, double y, double width, double height,string stroke, string fill)
 {
     cout<< "<rect x='"<<x<<"' y='"<<y<<"' width='"<<width<<"' height='"<<height<<"' stroke='red' fill='blue'/>";
 }
@@ -33,7 +33,8 @@ void show_histogram_svg(const vector<size_t> bins)
     const auto TEXT_BASELINE = 20;
     const auto TEXT_WIDTH = 50;
     const auto BIN_HEIGHT = 30;
-    input_BLOCK_WIDTH(BLOCK_WIDTH,1);
+    int flag=1;
+    input_BLOCK_WIDTH(BLOCK_WIDTH,flag);
     size_t MAX_ASTERISK=(size_t)(350/BLOCK_WIDTH);
     svg_begin(IMAGE_WIDTH, IMAGE_HEIGHT);
     unsigned max_count=0;

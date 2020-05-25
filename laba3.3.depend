@@ -14,19 +14,20 @@
 	<iostream>
 	<vector>
 
-1588023166 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\svg.h
+1590414599 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\svg.h
 	<vector>
+	<string>
 
-1588070954 source:c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\svg.cpp
+1590414545 source:c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\svg.cpp
 	"svg.h"
 	"block_width.h"
 	<iostream>
 
-1588071090 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\block_width.h
+1590414545 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\block_width.h
 	<vector>
 	<iostream>
 
-1589025208 source:c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\block_width.cpp
+1590414545 source:c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\block_width.cpp
 	"block_width.h"
 	<iostream>
 	<vector>

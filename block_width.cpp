@@ -3,7 +3,7 @@
 using namespace std;
 #include <vector>
 
-void input_BLOCK_WIDTH(double &BLOCK_WIDTH, int flag)
+void input_BLOCK_WIDTH(double &BLOCK_WIDTH, int &flag)
 {
     while (flag==1)
     {
