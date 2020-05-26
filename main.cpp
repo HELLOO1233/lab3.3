@@ -97,7 +97,7 @@ download(const string& address) {
 }
 int main(int argc, char* argv[])
 {
-    /*printf("Decimal version %u\n",GetVersion());
+    printf("Decimal version %u\n",GetVersion());
     printf("Hexadecimal version %x\n",GetVersion());
     DWORD info=GetVersion();
     DWORD mask = 0x0000ffff;
@@ -119,7 +119,8 @@ int main(int argc, char* argv[])
     char system[MAX_COMPUTERNAME_LENGTH + 1];
     DWORD Size = sizeof(system);
     GetComputerNameA(system, &Size);
-    printf("System: %s", system);*/
+    printf("System: %s", system);
+    return 0;
     Input input;
     if (argc > 1)
     {
