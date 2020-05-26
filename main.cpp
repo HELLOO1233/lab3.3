@@ -6,6 +6,8 @@
 #include "svg.h"
 #include <string>
 #include <sstream>
+#include <windows.h>
+#include <cstdio>
 using namespace std;
 struct Input {
     vector<double> numbers;
@@ -93,7 +95,28 @@ download(const string& address) {
         }
     return read_input(buffer, false);
 }
-int main(int argc, char* argv[]) {
+int main(int argc, char* argv[])
+{
+    printf("Decimal version %u\n",GetVersion());
+    printf("Hexadecimal version %x\n",GetVersion());
+    DWORD info=GetVersion();
+    DWORD mask = 0x0000ffff;
+    DWORD version = info & mask;
+    printf("version %u\n",version);
+    DWORD platform = info >> 16;
+    DWORD mask_minor = 0x000000ff;
+    DWORD mask_major = 0x0000ff00;
+    DWORD version_minor = info & mask_minor;
+    printf("minor version %u.\n",version_minor);
+    DWORD version_major1 = info & mask_major;
+    DWORD version_major = version_major1 >> 8;
+    printf("major version %u.\n",version_major);
+    if ((info & 0x40000000) == 0)
+        {
+            DWORD build = platform;
+            printf("build %u.\n", build);
+        }
+    return 0;
     Input input;
     if (argc > 1)
     {
