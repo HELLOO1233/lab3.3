@@ -97,7 +97,7 @@ int main(int argc, char* argv[]) {
     Input input;
     if (argc > 1)
     {
-        input = download(argv[1]);;
+        input = download(argv[1]);
     }
     else
     {
