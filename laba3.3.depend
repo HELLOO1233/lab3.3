@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1590420742 source:c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\main.cpp
+1590443107 source:c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\main.cpp
 	<iostream>
 	<curl/curl.h>
 	<vector>
