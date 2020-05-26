@@ -6,7 +6,6 @@
 #include "svg.h"
 #include <string>
 #include <sstream>
-#include <cstdio>
 using namespace std;
 struct Input {
     vector<double> numbers;
@@ -94,13 +93,7 @@ download(const string& address) {
         }
     return read_input(buffer, false);
 }
-int main(int argc, char* argv[])
-{
-    const char* name = "Commander Shepard";
-    int year = 2154;
-    printf("%s was born in %d.\n", name, year);
-    printf("n = %08x\n", 0x1234567);
-    return 0;
+int main(int argc, char* argv[]) {
     Input input;
     if (argc > 1)
     {
