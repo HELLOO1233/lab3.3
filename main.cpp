@@ -7,7 +7,8 @@
 #include <string>
 #include <sstream>
 using namespace std;
-struct Input {
+struct Input
+{
     vector<double> numbers;
     size_t bin_count;
 };
@@ -19,7 +20,7 @@ input_numbers (istream& in, size_t count)
     {
         in>>result[i];
     }
-return result;
+    return result;
 }
 vector<size_t>
 make_histogram(struct Input data)
@@ -39,7 +40,7 @@ make_histogram(struct Input data)
     return bins;
 }
 Input
-read_input(istream& in , bool promt)
+read_input(istream& in, bool promt)
 {
     size_t number_count;
     Input data;
@@ -70,30 +71,32 @@ write_data(void* items, size_t item_size, size_t item_count, void* ctx)
     return 0;
 }
 Input
-download(const string& address) {
+download(const string& address)
+{
     stringstream buffer;
     curl_global_init(CURL_GLOBAL_ALL);
     CURL *curl = curl_easy_init();
-        if(curl)
+    if(curl)
+    {
+        CURLcode res;
+        curl_easy_setopt(curl, CURLOPT_URL,address);
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &buffer);
+        res = curl_easy_perform(curl);
+        if (res != CURLE_OK)
         {
-            CURLcode res;
-            curl_easy_setopt(curl, CURLOPT_URL,address);
-            curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
-            curl_easy_setopt(curl, CURLOPT_WRITEDATA, &buffer);
-            res = curl_easy_perform(curl);
-            if (res != CURLE_OK)
-            {
-                cout << curl_easy_strerror(res) << endl;
-                cout <<curl_version_info(CURLVERSION_NOW)<<"\n";
-                curl_version_info_data asd;
-                cout <<asd.ssl_version_num<<"\n";
-                exit(1);
-            }
-            curl_easy_cleanup(curl);
-        }
-    return read_input(buffer, false);
+            cout << curl_easy_strerror(res) << endl;
+            cout <<curl_version_info(CURLVERSION_NOW)<<"\n";
+            curl_version_info_data *asd=curl_version_info(CURLVERSION_NOW);
+            cout <<asd->ssl_version<<"\n";
+            exit(1);
+    }
+    curl_easy_cleanup(curl);
 }
-int main(int argc, char* argv[]) {
+return read_input(buffer, false);
+}
+int main(int argc, char* argv[])
+{
     Input input;
     if (argc > 1)
     {
