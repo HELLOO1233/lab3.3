@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1590533437 source:c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\main.cpp
+1590742095 source:c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\main.cpp
 	<iostream>
 	<curl/curl.h>
 	<vector>
@@ -19,14 +19,18 @@
 	<iostream>
 	<vector>
 
-1590414599 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\svg.h
+1590740760 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\svg.h
 	<vector>
 	<string>
+	<windows.h>
 
-1590414545 source:c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\svg.cpp
+1590741828 source:c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\svg.cpp
 	"svg.h"
 	"block_width.h"
 	<iostream>
+	<string>
+	<sstream>
+	<windows.h>
 
 1590414545 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\block_width.h
 	<vector>
@@ -37,7 +41,7 @@
 	<iostream>
 	<vector>
 
-1587991348 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\curl\include\curl\curl.h
+1590706891 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\curl\include\curl\curl.h
 	"curlver.h"
 	"system.h"
 	<stdio.h>

@@ -1,6 +1,9 @@
 #include "svg.h"
 #include "block_width.h"
 #include <iostream>
+#include <string>
+#include <sstream>
+#include <windows.h>
 using namespace std;
 void svg_text(double left, double baseline, string text)
 {
@@ -24,10 +27,40 @@ void svg_end()
 {
     cout << "</svg>\n";
 }
+string
+make_info_text() {
+    stringstream buffer;
+    //printf("Decimal version %u\n",GetVersion());
+    //printf("Hexadecimal version %x\n",GetVersion());
+    DWORD info=GetVersion();
+    DWORD mask = 0x0000ffff;
+    DWORD version = info & mask;
+    //printf("version %u\n",version);
+    DWORD platform = info >> 16;
+    DWORD mask_minor = 0x000000ff;
+    DWORD mask_major = 0x0000ff00;
+    DWORD version_minor = info & mask_minor;
+    //printf("minor version %u.\n",version_minor);
+    DWORD version_major1 = info & mask_major;
+    DWORD version_major = version_major1 >> 8;
+    //printf("major version %u.\n",version_major);
+    if ((info & 0x40000000) == 0)
+        {
+            DWORD build = platform;
+            //printf("build %u.\n", build);
+            buffer << "Windows v" << version_major << "." << version_minor << "(build " << build << ")\n";
+        }
+    char system[MAX_COMPUTERNAME_LENGTH + 1];
+    DWORD Size = sizeof(system);
+    GetComputerNameA(system, &Size);
+    //printf("System: %s", system);
+    buffer << "Computer name: " << system << "\n";
+    return buffer.str();
+}
 void show_histogram_svg(const vector<size_t> bins)
 {
     double BLOCK_WIDTH;
-    const auto IMAGE_WIDTH = 400;
+    const auto IMAGE_WIDTH = 500;
     const auto IMAGE_HEIGHT = 300;
     const auto TEXT_LEFT = 20;
     const auto TEXT_BASELINE = 20;
@@ -60,5 +93,6 @@ void show_histogram_svg(const vector<size_t> bins)
 
 
     }
+    cout << "<text x='" << TEXT_LEFT << "' y='"<<top+BIN_HEIGHT<<"'>"<<make_info_text()<<"</text>";
     svg_end();
 }
