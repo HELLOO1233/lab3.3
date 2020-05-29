@@ -36,7 +36,12 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add directory="curl/include" />
 		</Compiler>
+		<Linker>
+			<Add library="libcurl.dll.a" />
+			<Add directory="curl/lib" />
+		</Linker>
 		<Unit filename="block_width.cpp" />
 		<Unit filename="block_width.h">
 			<Option target="&lt;{~None~}&gt;" />
