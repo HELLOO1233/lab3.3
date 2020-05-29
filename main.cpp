@@ -6,6 +6,8 @@
 #include "svg.h"
 #include <string>
 #include <sstream>
+#include <windows.h>
+#include <cstdio>
 using namespace std;
 struct Input
 {

@@ -1,5 +1,7 @@
 # depslib dependency file v1.0
-1590738318 source:c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\main.cpp
+369442824 <<<<<<< HEAD
+
+1590775519 source:c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\main.cpp
 	<iostream>
 	<curl/curl.h>
 	<vector>
@@ -8,6 +10,20 @@
 	"svg.h"
 	<string>
 	<sstream>
+	<windows.h>
+	<cstdio>
+
+1590742095 04-2
+	<iostream>
+	<curl/curl.h>
+	<vector>
+	<conio.h>
+	"histogram.h"
+	"svg.h"
+	<string>
+	<sstream>
+	<windows.h>
+	<cstdio>
 
 1589025429 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\histogram.h
 	<vector>
@@ -17,14 +33,18 @@
 	<iostream>
 	<vector>
 
-1590414599 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\svg.h
+1590775519 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\svg.h
 	<vector>
 	<string>
+	<windows.h>
 
-1590414545 source:c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\svg.cpp
+1590775519 source:c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\svg.cpp
 	"svg.h"
 	"block_width.h"
 	<iostream>
+	<string>
+	<sstream>
+	<windows.h>
 
 1590414545 c:\users\kirill\desktop\Программирование\2-й сем\laba3.3\laba3.3\block_width.h
 	<vector>
